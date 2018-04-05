@@ -26,7 +26,7 @@ class BooksControllerTest extends TestCase
     {
         $this->get('/books')
             ->seeJson([
-                'title' => 'War of the Worlds'
+                'title' => 'Wars of the Worlds'
             ])
             ->seeJson([
               'title' => 'A Wrinkle in Time'
