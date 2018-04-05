@@ -14,6 +14,8 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/books', 'BooksController@index');
 $router->get('/hello/world', function() use ($router){
     return "hello world";
 });
@@ -28,8 +30,6 @@ $router->get('/response', function (Illuminate\Http\Request $request){
     if($request->wantsJson()){
         return response()->json(['greeting' => 'Hello stranger']);
     }
-//    return(new Illuminate\Http\Response('Hello stranger', 200))
-//        ->header('Content-type', 'text/plain');
     return response()
         ->make('Hello stranger', 200, ['Content-type'=> 'text/plain']);
 });
